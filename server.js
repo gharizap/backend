@@ -1,13 +1,12 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const db = require("./config/Database");
 const router = require("./routes/router");
 
 dotenv.config();
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 async function startServer() {
   try {
@@ -19,9 +18,8 @@ async function startServer() {
   }
 
   app.use(cors());
-  app.use(cookieParser());
   app.use(express.json());
-  pp.use(express.urlencoded({ extended: true }));
+  app.use(express.urlencoded({ extended: true }));
   app.use(router);
 
   app.listen(port, () => {

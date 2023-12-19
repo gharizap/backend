@@ -10,7 +10,7 @@ const logout = async (req, res) => {
   if (!user) return res.sendStatus(204);
   const id = user.id;
   await Users.update(
-    { token: null },
+    { refresh_token: null },
     {
       where: {
         id: id,
