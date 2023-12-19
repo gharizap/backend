@@ -37,8 +37,10 @@ const register = async (req, res) => {
       message: "account has been created",
     });
   } catch (error) {
-    console.log(error);
-    res.status(500).send(error);
+    res.status(500).json({
+      error: true,
+      message: error.message
+    });
   }
 };
 

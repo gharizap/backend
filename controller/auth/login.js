@@ -39,12 +39,12 @@ const login = async (req, res) => {
       { userId, name, email },
       process.env.REFRESH_TOKEN_SECRET,
       {
-        expiresIn: "1d",
+        expiresIn: "1y",
       }
     );
 
     await Users.update(
-      { token: refreshToken },
+      { refresh_token: refreshToken },
       {
         where: {
           id: userId,

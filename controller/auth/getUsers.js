@@ -10,9 +10,9 @@ const getUsers = async (req, res) => {
     });
 
     if (!user) return res.sendStatus(404);
-    res.json(user);
+    return res.json(user);
   } catch (error) {
-    res.status(500).json({
+    return res.status(500).json({
       error: true,
       message: error.message,
     });
