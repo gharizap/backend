@@ -17,6 +17,7 @@ const updateTaskById = require("../controller/tasks/updateTaskById");
 const getTaskById = require("../controller/tasks/getTaskById");
 const getTaskByDate = require("../controller/tasks/getTaskByDate");
 const deleteTaskById = require("../controller/tasks/deleteTaskById");
+const predictionTask = require("../controller/tasks/predictionTask");
 
 const router = express.Router();
 
@@ -31,6 +32,7 @@ router.get("/tasks/date/:date", verifyToken, getTaskByDate);
 router.post("/tasks", verifyToken, createTask);
 router.put("/tasks/:id", verifyToken, updateTaskById);
 router.delete("/tasks/:id", verifyToken, deleteTaskById);
+router.get("/prediction/tasks", verifyToken, predictionTask);
 router.get("/users", verifyToken, getUsers);
 router.post(
   "/users",
