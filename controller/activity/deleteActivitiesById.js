@@ -32,12 +32,12 @@ const deleteActivitiesById = async (req, res) => {
       },
     });
 
-    res.json({
+    return res.json({
       error: false,
-      message: "success",
+      message: "success deleted activity",
     });
   } catch (error) {
-    res.status(500).json({
+    return res.status(500).json({
       error: true,
       message: error.message,
     });

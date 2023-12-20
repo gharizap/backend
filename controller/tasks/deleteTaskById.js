@@ -34,7 +34,7 @@ const deleteTaskById = async (req, res) => {
 
     return res.json({
       error: false,
-      message: "success",
+      message: "success deleted task",
     });
   } catch (error) {
     return res.status(500).json({

@@ -21,20 +21,18 @@ const predictionTask = async (req, res) => {
             message: "Tasks not found",
           });
         }
-        // return res.status(200).json(tasks);
+        
         const name = tasks[0].name;
         const category = tasks[0].category;
         const priority = tasks[0].priority;
 
-        const getPrediction = await axios.post(process.env.ML_API_TASK, [{
+        const getRecommendation = await axios.post(process.env.ML_HOST_TASK, [{
             nama_kegiatan: name,
             kategori: category,
             prioritas: priority
         }]);
-        const predictedTask = getPrediction.data;
-        if(predictedTask) {
-            return res.json(predictedTask);
-        }
+        const recommendationTask = getRecommendation.data;
+        return res.json(recommendationTask);
       } catch (error) {
         return res.status(500).json({
           error: true,
