@@ -17,20 +17,26 @@ const updateTaskById = require("../controller/tasks/updateTaskById");
 const getTaskById = require("../controller/tasks/getTaskById");
 const getTaskByDate = require("../controller/tasks/getTaskByDate");
 const deleteTaskById = require("../controller/tasks/deleteTaskById");
+const predictionTask = require("../controller/tasks/predictionTask");
+const deleteAllactivities = require("../controller/activity/deleteAllActivities");
+const predictionActivities = require("../controller/activity/predictionActivities");
 
 const router = express.Router();
 
 router.get("/activities", verifyToken, getActivities);
 router.get("/activities/:id", verifyToken, getActivitiesById);
+router.get("/prediction/activities/:id", verifyToken, predictionActivities);
 router.post("/activities", verifyToken, createActivities);
 router.put("/activities/:id", verifyToken, updateActivitiesId);
 router.delete("/activities/:id", verifyToken, deleteActivitiesById);
+router.delete("/activities", verifyToken, deleteAllactivities);
 router.get("/tasks", verifyToken, getTask);
 router.get("/tasks/:id", verifyToken, getTaskById);
 router.get("/tasks/date/:date", verifyToken, getTaskByDate);
 router.post("/tasks", verifyToken, createTask);
 router.put("/tasks/:id", verifyToken, updateTaskById);
 router.delete("/tasks/:id", verifyToken, deleteTaskById);
+router.get("/prediction/tasks", verifyToken, predictionTask);
 router.get("/users", verifyToken, getUsers);
 router.post(
   "/users",
