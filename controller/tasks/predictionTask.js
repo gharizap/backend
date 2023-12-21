@@ -42,9 +42,6 @@ const predictionTask = async (req, res) => {
     
         const recommendTask = await Promise.all(recommendTaskPromises);
         return res.json(recommendTask);
-        
-        // console.log(recommendTask);
-        // return res.json(recommendTask);
       } catch (error) {
         return res.status(500).json({
           error: true,
