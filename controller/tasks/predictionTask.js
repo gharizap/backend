@@ -15,24 +15,33 @@ const predictionTask = async (req, res) => {
           attributes: ["name", "category", "priority"]
         });
     
-        if (!tasks) {
+        if (!tasks || tasks.length === 0) {
           return res.status(404).json({
             error: true,
             message: "Tasks not found",
           });
         }
-        
-        const name = tasks[0].name;
-        const category = tasks[0].category;
-        const priority = tasks[0].priority;
 
-        const getRecommendation = await axios.post(process.env.ML_HOST_TASK, [{
-            nama_kegiatan: name,
-            kategori: category,
-            prioritas: priority
-        }]);
-        const recommendationTask = getRecommendation.data;
-        return res.json(recommendationTask);
+        const recommendTaskPromises = tasks.map(async (task) => {
+          const name = task.name.toLowerCase();
+          const category = task.category.toLowerCase();
+          const priority = task.priority.toLowerCase();
+        
+          try {
+            const getRecommendation = await axios.post(process.env.ML_HOST_TASK, {
+              nama_kegiatan: name,
+              kategori: category,
+              prioritas: priority
+            });
+            return getRecommendation.data;
+          } catch (error) {
+            console.error("Error fetching recommendation:", error);
+            return null; // or handle error as needed
+          }
+        });
+    
+        const recommendTask = await Promise.all(recommendTaskPromises);
+        return res.json(recommendTask);
       } catch (error) {
         return res.status(500).json({
           error: true,
