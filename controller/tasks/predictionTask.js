@@ -22,9 +22,9 @@ const predictionTask = async (req, res) => {
           });
         }
         
-        const name = tasks[0].name;
-        const category = tasks[0].category;
-        const priority = tasks[0].priority;
+        const name = tasks[0].name.toLowerCase();
+        const category = tasks[0].category.toLowerCase();
+        const priority = tasks[0].priority.toLowerCase();
 
         const getRecommendation = await axios.post(process.env.ML_HOST_TASK, [{
             nama_kegiatan: name,
