@@ -5,8 +5,9 @@ This service using MYSQL as the database, so you need to run MYSQL and Apache us
 
 ## How to run this Application
 1. Clone the repository after that opet it using your code editor
-2. In the root directory of this project, make a new file named .env to provide the configurations needed.
-3. Copy these details into .env file:
+2. Supposedly you have done the steps from the [MachineLearning](https://github.com/CH2-PS412/MachineLearning) and [MachineLearning2](https://github.com/CH2-PS412/MachineLearning2) repository, you can continue these steps. If not, check the MachineLearning(https://github.com/CH2-PS412/MachineLearning) and [MachineLearning2](https://github.com/CH2-PS412/MachineLearning2) repository and finish the steps there first (otherwise you can't complete these steps).
+3. In the root directory of this project, make a new file named .env to provide the configurations needed.
+4. Copy these details into .env file:
 ```
 # No need to change
 ACCESS_TOKEN_SECRET = jsjdsahdasdiquwudh321321u0dqklqsjdmqwkdjqjdi83210
