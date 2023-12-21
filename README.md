@@ -16,9 +16,9 @@ DATABASE_NAME = "aiang_db"
 DATABASE_PASS = ""
 DATABASE_HOST = "localhost"
 PORT = 8080
-# Fill with the url of the ml-task-api
+# Fill with the url of the ml-task-api(MachineLearning-api)
 ML_HOST_TASK = ""
-# Fill with the url of the ml-activity-api
+# Fill with the url of the ml-activity-api(MachineLearning2-api)
 ML_HOST_ACTIVITY = ""
 ```
 5.. Open terminal in the project root directory, then run `npm install` to install the application dependencies.
