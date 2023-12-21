@@ -21,11 +21,11 @@ ML_HOST_TASK = ""
 ML_HOST_ACTIVITY = ""
 ```
 4. Open terminal in the project root directory, then run `npm install` to install the application dependencies.
-5. Open your browser then go to [http://localhost/phpmyadmin/].
+5. Open your browser then go to [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/).
 6. Click import then in the choose file field you can click it and select aiang_db.sql file in this project directory.
 7. After import the database, run the application using this command in your terminal: `npm run start`.
-8. The server will run in localhost with the port 8080, open [http://localhost:8080] in your browser.
-9. if it doesn't show any errors and pop up Cannot GET / then you successfully run the service.
+8. The server will run in localhost with the port 8080, open [http://localhost:8080](http://localhost:8080) in your browser.
+9. if it doesn't show any errors and pop up `Cannot GET /` then you successfully run the service.
 
 For the public API documentation that we used for the mobile app you can check from this link:
 - [auth](https://github.com/daffaYuharshu/task-api)
